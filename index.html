@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrueSight AI – Deepfake & Digital Identity Verification System</title>
+  <meta name="description" content="Next-generation AI deepfake detection, synthetic text analysis, and biometric digital identity verification platform. Built for modern digital trust.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons for UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Canvas & Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Main Top Navigation -->
+  <header class="navbar-wrapper" id="top-navbar">
+    <div class="navbar-container">
+      <a href="#hero" class="brand-logo" aria-label="TrueSight AI Home">
+        <div class="logo-icon-wrap">
+          <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="url(#logo-grad)" stroke-width="2.5" stroke-dasharray="4 2"/>
+            <circle cx="20" cy="20" r="11" stroke="#00F0FF" stroke-width="1.8"/>
+            <circle cx="20" cy="20" r="5" fill="url(#logo-core)"/>
+            <path d="M7 20H13M27 20H33M20 7V13M20 27V33" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40">
+                <stop stop-color="#00F0FF"/>
+                <stop offset="0.5" stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+              <linearGradient id="logo-core" x1="15" y1="15" x2="25" y2="25">
+                <stop stop-color="#00F0FF"/>
+                <stop offset="1" stop-color="#3B82F6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="logo-pulse"></div>
+        </div>
+        <div class="logo-text-group">
+          <span class="brand-title">TrueSight<span class="brand-accent">.AI</span></span>
+          <span class="brand-badge">PROTOTYPE v2.4</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#image-detection" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Image Detection</a>
+        <a href="#text-analysis" class="nav-link"><i class="fa-solid fa-file-shield"></i> Text Analysis</a>
+        <a href="#identity-verification" class="nav-link"><i class="fa-solid fa-id-card-clip"></i> Identity Verification</a>
+        <a href="#dashboard" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="nav-actions">
+        <button id="soundToggleBtn" class="utility-icon-btn" title="Toggle UI Sound Effects" aria-label="Toggle Sound">
+          <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+        </button>
+        <div class="system-status-indicator" title="System operational in client simulation mode">
+          <span class="status-dot"></span>
+          <span class="status-label">Engine Ready</span>
+        </div>
+        <a href="#image-detection" class="btn btn-sm btn-primary-glow desktop-cta">
+          <span>Scan Media</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Prototype Transparency Disclaimer Banner -->
+  <div class="prototype-banner">
+    <div class="prototype-banner-content">
+      <span class="badge-notice"><i class="fa-solid fa-triangle-exclamation"></i> Hackathon Demonstration</span>
+      <p>TrueSight AI is an interactive client-side prototype. Image, text, and biometric analyses use demonstration heuristics and visual inspection overlays for educational presentation.</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-glow-dot"></span>
+            <span class="badge-text"><i class="fa-solid fa-shield-halved"></i> Next-Gen Synthetic Media Defense</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Can You Trust <br>
+            <span class="gradient-text">What You See?</span>
+          </h1>
+          
+          <p class="hero-description">
+            In an era of hyper-realistic generative AI, synthetic face swaps, and identity spoofing, TrueSight AI provides rapid multi-vector forensic inspection. Scan suspicious media, detect AI-generated text, and cross-reference biometric credentials in seconds.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#image-detection" class="btn btn-primary-glow hero-btn">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              <span>Analyze an Image</span>
+            </a>
+            <a href="#identity-verification" class="btn btn-glass-secondary hero-btn">
+              <i class="fa-solid fa-fingerprint"></i>
+              <span>Verify Digital Identity</span>
+            </a>
+          </div>
+
+          <!-- Feature Highlights Pills -->
+          <div class="hero-feature-pills">
+            <div class="pill-item"><i class="fa-solid fa-check-circle"></i> Error Level Analysis (ELA)</div>
+            <div class="pill-item"><i class="fa-solid fa-check-circle"></i> Facial Landmark Mesh</div>
+            <div class="pill-item"><i class="fa-solid fa-check-circle"></i> NLP Hallucination Check</div>
+            <div class="pill-item"><i class="fa-solid fa-check-circle"></i> Zero-Data Storage Privacy</div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Holographic Terminal -->
+        <div class="hero-visual">
+          <div class="scanner-card-3d">
+            <div class="scanner-card-header">
+              <div class="mac-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">TRUESIGHT_CORE_TELEMETRY.SYS</span>
+              <span class="live-tag">LIVE SCANNER</span>
+            </div>
+            <div class="scanner-card-body">
+              <div class="hero-face-scanner">
+                <svg viewBox="0 0 300 240" class="hero-hologram-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Biometric Facial Grid Wireframe -->
+                  <rect width="300" height="240" fill="#080E24" rx="10"/>
+                  <!-- Background Tech Circles -->
+                  <circle cx="150" cy="115" r="95" stroke="#1E293B" stroke-width="1.5" stroke-dasharray="6 4"/>
+                  <circle cx="150" cy="115" r="70" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1.5"/>
+                  
+                  <!-- Face Contour -->
+                  <path d="M100 80 Q90 120 110 160 Q130 190 150 195 Q170 190 190 160 Q210 120 200 80 Q150 50 100 80 Z" stroke="#00F0FF" stroke-width="2" fill="rgba(0, 240, 255, 0.05)"/>
+                  
+                  <!-- Eyes & Landmarks -->
+                  <circle cx="125" cy="105" r="8" stroke="#8B5CF6" stroke-width="1.5"/>
+                  <circle cx="125" cy="105" r="3" fill="#00F0FF"/>
+                  <circle cx="175" cy="105" r="8" stroke="#8B5CF6" stroke-width="1.5"/>
+                  <circle cx="175" cy="105" r="3" fill="#00F0FF"/>
+                  <line x1="125" y1="105" x2="175" y2="105" stroke="rgba(255, 255, 255, 0.4)" stroke-dasharray="2 2"/>
+                  
+                  <!-- Nose and Mouth Mesh -->
+                  <path d="M150 100 L145 130 L155 130 Z" stroke="#00F0FF" stroke-width="1.5"/>
+                  <path d="M135 150 Q150 160 165 150 Q150 165 135 150 Z" stroke="#8B5CF6" stroke-width="1.5"/>
+                  
+                  <!-- Mesh Triangulation Lines -->
+                  <line x1="100" y1="80" x2="125" y2="105" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                  <line x1="200" y1="80" x2="175" y2="105" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                  <line x1="125" y1="105" x2="150" y2="130" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1"/>
+                  <line x1="175" y1="105" x2="150" y2="130" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1"/>
+                  <line x1="150" y1="130" x2="150" y2="150" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+                  <line x1="135" y1="150" x2="150" y2="195" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                  <line x1="165" y1="150" x2="150" y2="195" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                  
+                  <!-- Corner Target Reticles -->
+                  <path d="M30 40 H50 M30 40 V60" stroke="#00F0FF" stroke-width="2"/>
+                  <path d="M270 40 H250 M270 40 V60" stroke="#00F0FF" stroke-width="2"/>
+                  <path d="M30 200 H50 M30 200 V180" stroke="#00F0FF" stroke-width="2"/>
+                  <path d="M270 200 H250 M270 200 V180" stroke="#00F0FF" stroke-width="2"/>
+                </svg>
+                <div class="hero-laser-scan"></div>
+              </div>
+
+              <!-- Terminal Telemetry Output -->
+              <div class="hero-telemetry-stats">
+                <div class="stat-mini-pill">
+                  <span class="label">FFT SPECTRUM:</span>
+                  <span class="val green"><i class="fa-solid fa-circle-check"></i> NORMAL</span>
+                </div>
+                <div class="stat-mini-pill">
+                  <span class="label">BIOMETRIC POSE:</span>
+                  <span class="val cyan">PITCH -2.1° YAW +0.4°</span>
+                </div>
+                <div class="stat-mini-pill">
+                  <span class="label">GAN ARTIFACTS:</span>
+                  <span class="val purple">0.024 (CLEAN)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-time Metrics / Statistics Counter Bar -->
+      <div class="stats-bar-wrapper">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon-box cyan-glow">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <div class="stat-data">
+              <div class="stat-number" data-target="98.7">98.7%</div>
+              <div class="stat-title">Benchmark Precision</div>
+              <div class="stat-desc">Face forensics test dataset</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box purple-glow">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="stat-data">
+              <div class="stat-number" data-target="1.1">&lt; 1.2s</div>
+              <div class="stat-title">Inspection Latency</div>
+              <div class="stat-desc">Accelerated client-side pipeline</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box blue-glow">
+              <i class="fa-solid fa-shield-virus"></i>
+            </div>
+            <div class="stat-data">
+              <div class="stat-number" id="statsTotalScanned">48,290+</div>
+              <div class="stat-title">Simulated Media Scans</div>
+              <div class="stat-desc">Images, text &amp; IDs evaluated</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box emerald-glow">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="stat-data">
+              <div class="stat-number">100%</div>
+              <div class="stat-title">Client-Side Privacy</div>
+              <div class="stat-desc">Zero files uploaded to third parties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 1: IMAGE DEEPFAKE DETECTION ==================== -->
+    <section class="feature-section" id="image-detection">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-users-viewfinder"></i> 5-AGENT FORENSIC SWARM</div>
+        <h2 class="section-title">Image Deepfake <span class="gradient-text">Detection</span></h2>
+        <p class="section-subtitle">
+          Powered by five specialized autonomous AI agents—<strong>Sentinel-Vision</strong>, <strong>Chronos-Forensics</strong>, <strong>PixelGuard-CFA</strong>, <strong>DeepEdge-Boundary</strong>, and <strong>NeuroSemantic-Context</strong>—cross-examining every pixel, hardware sensor trace, and optical ray vector to reach an unassailable swarm consensus.
+        </p>
+      </div>
+
+      <div class="detection-container">
+        <!-- Preset Demo Samples Quick Selector -->
+        <div class="demo-samples-card">
+          <div class="samples-header">
+            <span class="samples-title"><i class="fa-solid fa-flask"></i> Quick Demo Presets (Instant Hackathon Test):</span>
+            <span class="samples-hint">Click any preset to load test data instantly without searching for files:</span>
+          </div>
+          <div class="samples-btn-group">
+            <button class="sample-preset-btn" data-sample="ai-portrait">
+              <i class="fa-solid fa-robot"></i>
+              <span>Synthetic AI Portrait (Midjourney)</span>
+              <span class="preset-tag tag-fake">Deepfake</span>
+            </button>
+            <button class="sample-preset-btn" data-sample="face-swap">
+              <i class="fa-solid fa-masks-theater"></i>
+              <span>Manipulated Face Swap</span>
+              <span class="preset-tag tag-warn">Spliced</span>
+            </button>
+            <button class="sample-preset-btn" data-sample="authentic-dslr">
+              <i class="fa-solid fa-camera"></i>
+              <span>Authentic Camera Photo</span>
+              <span class="preset-tag tag-real">Authentic</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Upload & Interactive Zone -->
+        <div class="detection-workspace-grid">
+          
+          <!-- Left: Upload & Inspection Workspace -->
+          <div class="glass-card upload-workspace-card">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-cloud-arrow-up icon-accent"></i>
+                <div>
+                  <h3>Media Ingestion</h3>
+                  <p class="card-caption">Supports JPG, JPEG, PNG, WEBP (Max 15MB)</p>
+                </div>
+              </div>
+              <div class="controls-toolbar-group">
+                <div class="agent-mode-control">
+                  <label for="agentDeploymentSelect" class="slider-label"><i class="fa-solid fa-users-gear text-cyan"></i> Agents:</label>
+                  <select id="agentDeploymentSelect" class="custom-select">
+                    <option value="swarm" selected>5-Agent Swarm (Full Consensus)</option>
+                    <option value="sentinel">Agent 1: Sentinel-Vision (Diffusion/FFT)</option>
+                    <option value="chronos">Agent 2: Chronos-Forensics (Optics/Ray-Trace)</option>
+                    <option value="pixelguard">Agent 3: PixelGuard-CFA (Sensor/PRNU)</option>
+                    <option value="deepedge">Agent 4: DeepEdge-Boundary (Splicing/Seams)</option>
+                    <option value="neurosemantic">Agent 5: NeuroSemantic (Anatomy/Context)</option>
+                  </select>
+                </div>
+                <div class="sensitivity-control">
+                  <label for="scanSensitivity" class="slider-label">Sensitivity:</label>
+                  <select id="scanSensitivity" class="custom-select">
+                    <option value="standard">Standard</option>
+                    <option value="forensic" selected>Forensic</option>
+                    <option value="strict">Strict</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drag & Drop Zone -->
+            <div class="dropzone-area" id="imageDropzone">
+              <input type="file" id="imageFileInput" accept="image/png, image/jpeg, image/jpg, image/webp" class="file-input-hidden">
+              <div class="dropzone-empty-state" id="dropzoneEmpty">
+                <div class="upload-icon-pulse">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </div>
+                <h4>Drag & Drop media here</h4>
+                <p>or click to browse local files from your device</p>
+                <div class="upload-specs-tags">
+                  <span><i class="fa-solid fa-file-image"></i> PNG/JPEG/WEBP</span>
+                  <span><i class="fa-solid fa-shield"></i> Local Inspection</span>
+                </div>
+              </div>
+
+              <!-- Active Preview State -->
+              <div class="dropzone-preview-state hidden" id="dropzonePreview">
+                <div class="preview-stage-container">
+                  <img id="imagePreviewElement" src="" alt="Uploaded media preview">
+                  <canvas id="analysisCanvasOverlay" class="canvas-overlay"></canvas>
+                  <!-- High-Tech Animated Laser Line -->
+                  <div class="laser-scanner-line hidden" id="laserScannerLine"></div>
+                </div>
+
+                <!-- Preview Controls & Mode Toggles -->
+                <div class="preview-toolbar">
+                  <div class="mode-toggles" id="canvasModeGroup">
+                    <button class="mode-btn active" data-mode="normal" title="Normal Color View">
+                      <i class="fa-regular fa-image"></i> Original
+                    </button>
+                    <button class="mode-btn" data-mode="ela" title="Error Level Analysis (Noise / Compression Anomaly)">
+                      <i class="fa-solid fa-wave-square"></i> ELA Heatmap
+                    </button>
+                    <button class="mode-btn" data-mode="mesh" title="Facial Landmark & Contour Overlay">
+                      <i class="fa-solid fa-draw-polygon"></i> Face Mesh
+                    </button>
+                    <button class="mode-btn" data-mode="frequency" title="High-Pass Frequency Gradient">
+                      <i class="fa-solid fa-cubes-stacked"></i> Frequency FFT
+                    </button>
+                    <button class="mode-btn" data-mode="cfa" title="Color Filter Array (CFA) & Edge Seam Discontinuity Mask">
+                      <i class="fa-solid fa-microchip"></i> CFA / Seam Mask
+                    </button>
+                  </div>
+                  
+                  <div class="file-actions">
+                    <button class="btn-icon-subtle danger" id="removeImageBtn" title="Remove Image">
+                      <i class="fa-solid fa-trash-can"></i> Remove
+                    </button>
+                    <button class="btn-icon-subtle" id="replaceImageBtn" title="Replace Image">
+                      <i class="fa-solid fa-arrow-rotate-right"></i> Replace
+                    </button>
+                  </div>
+                </div>
+
+                <!-- File Meta Details Bar -->
+                <div class="file-metadata-row" id="fileMetadataRow">
+                  <span><strong id="metaFileName">filename.jpg</strong></span>
+                  <span id="metaFileSize">-- KB</span>
+                  <span id="metaFileDim">-- x -- px</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="upload-action-row">
+              <button class="btn btn-primary-glow w-100" id="analyzeImageBtn" disabled>
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <span id="analyzeBtnText">Analyze Image</span>
+              </button>
+            </div>
+
+            <!-- Live Scanning Multi-Stage Progress Bar (visible during scan) -->
+            <div class="scan-progress-box hidden" id="scanProgressBox">
+              <div class="scan-progress-header">
+                <span class="progress-step-text" id="progressStepText">Initializing 5-agent forensic swarm...</span>
+                <span class="progress-percent" id="progressPercent">0%</span>
+              </div>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+              </div>
+              <div class="scan-subtasks-list" id="scanSubtasks">
+                <div class="subtask-item pending" id="task1"><i class="fa-solid fa-circle-notch fa-spin"></i> [Sentinel-Vision] Spatial Fourier (FFT) Noise</div>
+                <div class="subtask-item pending" id="task2"><i class="fa-solid fa-circle-notch fa-spin"></i> [Chronos-Forensics] Corneal Ray-Trace &amp; Normals</div>
+                <div class="subtask-item pending" id="task3"><i class="fa-solid fa-circle-notch fa-spin"></i> [PixelGuard-CFA] Bayer Sensor &amp; PRNU Pattern</div>
+                <div class="subtask-item pending" id="task4"><i class="fa-solid fa-circle-notch fa-spin"></i> [DeepEdge-Boundary] Alpha Seam &amp; Masking</div>
+                <div class="subtask-item pending" id="task5"><i class="fa-solid fa-circle-notch fa-spin"></i> [NeuroSemantic] Anatomical Geometry &amp; Consensus</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Analysis Dashboard Results -->
+          <div class="glass-card analysis-results-card" id="analysisResultsCard">
+            <!-- Blank State Placeholder -->
+            <div class="results-blank-state" id="resultsBlankState">
+              <div class="blank-icon-wrap">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h3>Awaiting Media Input</h3>
+              <p>Upload an image or pick a demo preset on the left, then click <strong>Analyze Image</strong> to run the comprehensive forensic inspection engine.</p>
+              <div class="blank-feature-list">
+                <div><i class="fa-solid fa-check text-cyan"></i> Probability scoring of Generative AI synthesis</div>
+                <div><i class="fa-solid fa-check text-cyan"></i> Boundary splicing and blending detection</div>
+                <div><i class="fa-solid fa-check text-cyan"></i> Cornea reflection and specular lighting audit</div>
+              </div>
+            </div>
+
+            <!-- Active Result Content (Shown after analysis) -->
+            <div class="results-content hidden" id="resultsContent">
+              <!-- Verdict Status Banner -->
+              <div class="verdict-banner" id="verdictBanner">
+                <div class="verdict-icon" id="verdictIcon">
+                  <i class="fa-solid fa-shield-virus"></i>
+                </div>
+                <div class="verdict-text-block">
+                  <span class="verdict-tag" id="verdictTag">VERDICT ASSESSMENT</span>
+                  <h3 class="verdict-title" id="verdictTitle">SYNTHETIC MEDIA DETECTED</h3>
+                  <p class="verdict-subtitle" id="verdictSubtitle">High probability of generative AI creation (Diffusion model artifacts detected).</p>
+                </div>
+                <div class="verdict-confidence-badge" id="verdictBadge">
+                  <span class="conf-label">Confidence</span>
+                  <span class="conf-value" id="overallConfidenceScore">98.4%</span>
+                </div>
+              </div>
+
+              <!-- ==================== 5-AGENT FORENSIC SWARM SYSTEM ==================== -->
+              <div class="multi-agent-system-panel" id="multiAgentPanel">
+                <!-- Multi-Agent Swarm Consensus Header -->
+                <div class="consensus-header-bar" id="consensusHeaderBar">
+                  <div class="consensus-title-group">
+                    <div class="consensus-icon-pulse"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <div>
+                      <span class="consensus-eyebrow"><i class="fa-solid fa-microchip"></i> 5-AGENT FORENSIC SWARM CONSENSUS</span>
+                      <h4 class="consensus-heading" id="consensusHeading">UNANIMOUS SWARM CONSENSUS (5/5 AGENTS FLAG SYNTHETIC)</h4>
+                    </div>
+                  </div>
+                  <div class="consensus-meter-wrap">
+                    <span class="consensus-label">Swarm Consensus Rate</span>
+                    <span class="consensus-pct" id="consensusAgreementRate">100% Agreement (5/5)</span>
+                  </div>
+                </div>
+
+                <!-- 5-Agent Grid -->
+                <div class="swarm-agents-grid">
+                  <!-- Agent 1: Sentinel-Vision -->
+                  <div class="agent-card agent-sentinel" id="agentCardSentinel">
+                    <div class="agent-card-header">
+                      <div class="agent-profile">
+                        <div class="agent-avatar cyan-glow"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                          <div class="agent-role-tag"><span class="dot-online cyan"></span> AGENT 1 • SPATIAL &amp; FFT</div>
+                          <h4 class="agent-name">Sentinel-Vision</h4>
+                          <span class="agent-model">ConvNeXt-Diffusion v4.2</span>
+                        </div>
+                      </div>
+                      <div class="agent-score-badge" id="agent1VerdictBadge">
+                        <span class="agent-score-val" id="agent1ScoreVal">97.4%</span>
+                        <span class="agent-verdict-label" id="agent1VerdictLabel">AI SYNTHETIC</span>
+                      </div>
+                    </div>
+                    <div class="agent-body">
+                      <p class="agent-focus" id="agent1Summary">Periodic 2D Fourier checkerboard upsampling artifacts detected at 64x64 latent grid. High-frequency skin micro-porosity is missing.</p>
+                      <div class="agent-findings-chips" id="agent1Chips">
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> FFT Spikes</span>
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Noise Anomaly</span>
+                        <span class="chip-finding warn"><i class="fa-solid fa-triangle-exclamation"></i> Pore Smoothing</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Agent 2: Chronos-Forensics -->
+                  <div class="agent-card agent-chronos" id="agentCardChronos">
+                    <div class="agent-card-header">
+                      <div class="agent-profile">
+                        <div class="agent-avatar purple-glow"><i class="fa-solid fa-eye"></i></div>
+                        <div>
+                          <div class="agent-role-tag"><span class="dot-online purple"></span> AGENT 2 • OPTICS &amp; RAY-TRACE</div>
+                          <h4 class="agent-name">Chronos-Forensics</h4>
+                          <span class="agent-model">BioOptic-Mesh v3.1</span>
+                        </div>
+                      </div>
+                      <div class="agent-score-badge" id="agent2VerdictBadge">
+                        <span class="agent-score-val" id="agent2ScoreVal">95.8%</span>
+                        <span class="agent-verdict-label" id="agent2VerdictLabel">PHYSICS ANOMALY</span>
+                      </div>
+                    </div>
+                    <div class="agent-body">
+                      <p class="agent-focus" id="agent2Summary">Corneal specular reflections violate ambient lighting ray vectors. Unnatural bilateral light angle disparity of 14.8° between pupils.</p>
+                      <div class="agent-findings-chips" id="agent2Chips">
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Corneal Disparity</span>
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Lighting Ray Mismatch</span>
+                        <span class="chip-finding info"><i class="fa-solid fa-circle-info"></i> Missing Poisson Grain</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Agent 3: PixelGuard-CFA (NEW) -->
+                  <div class="agent-card agent-pixelguard" id="agentCardPixelGuard">
+                    <div class="agent-card-header">
+                      <div class="agent-profile">
+                        <div class="agent-avatar amber-glow"><i class="fa-solid fa-microchip"></i></div>
+                        <div>
+                          <div class="agent-role-tag"><span class="dot-online amber"></span> AGENT 3 • CFA &amp; PRNU SENSOR</div>
+                          <h4 class="agent-name">PixelGuard-CFA</h4>
+                          <span class="agent-model">PRNU-SensorNet v2.8</span>
+                        </div>
+                      </div>
+                      <div class="agent-score-badge" id="agent3VerdictBadge">
+                        <span class="agent-score-val" id="agent3ScoreVal">98.2%</span>
+                        <span class="agent-verdict-label text-amber" id="agent3VerdictLabel">SYNTHETIC TENSOR</span>
+                      </div>
+                    </div>
+                    <div class="agent-body">
+                      <p class="agent-focus" id="agent3Summary">Zero hardware silicon PRNU noise detected. Bayer color filter array demosaicing signatures absent; rendered in direct floating-point RGB tensor.</p>
+                      <div class="agent-findings-chips" id="agent3Chips">
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> No Bayer Demosaic</span>
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Zero Sensor PRNU</span>
+                        <span class="chip-finding info"><i class="fa-solid fa-circle-info"></i> Direct RGB Tensor</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Agent 4: DeepEdge-Boundary (NEW) -->
+                  <div class="agent-card agent-deepedge" id="agentCardDeepEdge">
+                    <div class="agent-card-header">
+                      <div class="agent-profile">
+                        <div class="agent-avatar red-glow"><i class="fa-solid fa-draw-polygon"></i></div>
+                        <div>
+                          <div class="agent-role-tag"><span class="dot-online red"></span> AGENT 4 • CONTOUR &amp; SEAMS</div>
+                          <h4 class="agent-name">DeepEdge-Boundary</h4>
+                          <span class="agent-model">EdgeDiscontinuity-ResNet v5.0</span>
+                        </div>
+                      </div>
+                      <div class="agent-score-badge" id="agent4VerdictBadge">
+                        <span class="agent-score-val" id="agent4ScoreVal">91.6%</span>
+                        <span class="agent-verdict-label text-red" id="agent4VerdictLabel">SPLICED EDGES</span>
+                      </div>
+                    </div>
+                    <div class="agent-body">
+                      <p class="agent-focus" id="agent4Summary">Micro-edge gradients reveal localized alpha-masking feathering along jawline and hair boundaries with Gaussian blur discrepancies.</p>
+                      <div class="agent-findings-chips" id="agent4Chips">
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Alpha Mask Seam</span>
+                        <span class="chip-finding warn"><i class="fa-solid fa-triangle-exclamation"></i> Gaussian Blur Fringe</span>
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> ELA Q-Disparity</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Agent 5: NeuroSemantic-Context (NEW) -->
+                  <div class="agent-card agent-neurosemantic" id="agentCardNeuroSemantic">
+                    <div class="agent-card-header">
+                      <div class="agent-profile">
+                        <div class="agent-avatar green-glow"><i class="fa-solid fa-brain"></i></div>
+                        <div>
+                          <div class="agent-role-tag"><span class="dot-online green"></span> AGENT 5 • ANATOMICAL PLAUSIBILITY</div>
+                          <h4 class="agent-name">NeuroSemantic-Context</h4>
+                          <span class="agent-model">SemanticViT-Geometry v3.4</span>
+                        </div>
+                      </div>
+                      <div class="agent-score-badge" id="agent5VerdictBadge">
+                        <span class="agent-score-val" id="agent5ScoreVal">94.3%</span>
+                        <span class="agent-verdict-label text-green" id="agent5VerdictLabel">ANATOMY HALLUCINATION</span>
+                      </div>
+                    </div>
+                    <div class="agent-body">
+                      <p class="agent-focus" id="agent5Summary">Biometric geometry reveals non-organic cartilage topology on left ear helix and subtle iris elliptical eccentricity violation.</p>
+                      <div class="agent-findings-chips" id="agent5Chips">
+                        <span class="chip-finding danger"><i class="fa-solid fa-triangle-exclamation"></i> Ear Topology Anomaly</span>
+                        <span class="chip-finding warn"><i class="fa-solid fa-triangle-exclamation"></i> Iris Eccentricity</span>
+                        <span class="chip-finding info"><i class="fa-solid fa-circle-info"></i> Vanishing Vector Skew</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5-Vector Multi-Matrix Radar Meter -->
+                <div class="forensic-matrix-container">
+                  <div class="matrix-header">
+                    <span class="matrix-title"><i class="fa-solid fa-chart-simple text-cyan"></i> 5-Vector Forensic Assessment Matrix:</span>
+                    <span class="matrix-badge">Swarm Telemetry v2.8</span>
+                  </div>
+                  <div class="matrix-bars-grid">
+                    <div class="matrix-bar-item">
+                      <div class="matrix-bar-meta">
+                        <span><i class="fa-solid fa-robot text-cyan"></i> Spatial Diffusion Index</span>
+                        <strong id="mBar1Val">97.4%</strong>
+                      </div>
+                      <div class="mini-bar-track"><div class="mini-bar-fill bg-cyan" id="mBar1" style="width: 97.4%;"></div></div>
+                    </div>
+                    <div class="matrix-bar-item">
+                      <div class="matrix-bar-meta">
+                        <span><i class="fa-solid fa-eye text-purple"></i> Optical Physics Coherence</span>
+                        <strong id="mBar2Val">95.8%</strong>
+                      </div>
+                      <div class="mini-bar-track"><div class="mini-bar-fill bg-purple" id="mBar2" style="width: 95.8%;"></div></div>
+                    </div>
+                    <div class="matrix-bar-item">
+                      <div class="matrix-bar-meta">
+                        <span><i class="fa-solid fa-microchip text-amber"></i> Sensor PRNU &amp; Bayer CFA</span>
+                        <strong id="mBar3Val">98.2%</strong>
+                      </div>
+                      <div class="mini-bar-track"><div class="mini-bar-fill bg-amber" id="mBar3" style="width: 98.2%;"></div></div>
+                    </div>
+                    <div class="matrix-bar-item">
+                      <div class="matrix-bar-meta">
+                        <span><i class="fa-solid fa-draw-polygon text-red"></i> Boundary Splice Risk</span>
+                        <strong id="mBar4Val">91.6%</strong>
+                      </div>
+                      <div class="mini-bar-track"><div class="mini-bar-fill bg-red" id="mBar4" style="width: 91.6%;"></div></div>
+                    </div>
+                    <div class="matrix-bar-item">
+                      <div class="matrix-bar-meta">
+                        <span><i class="fa-solid fa-brain text-green"></i> Anatomical Plausibility</span>
+                        <strong id="mBar5Val">94.3%</strong>
+                      </div>
+                      <div class="mini-bar-track"><div class="mini-bar-fill bg-green" id="mBar5" style="width: 94.3%;"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5-Agent Cross-Examination & Deliberation Dialogue Stream -->
+                <div class="agent-deliberation-box" id="agentDeliberationBox">
+                  <div class="deliberation-header">
+                    <div class="deliberation-title">
+                      <i class="fa-solid fa-comments text-cyan"></i>
+                      <span>Autonomous 5-Agent Round-Table Deliberation Stream</span>
+                    </div>
+                    <span class="deliberation-status"><span class="status-pulse-dot"></span> 5 Agents Synchronized</span>
+                  </div>
+                  <div class="deliberation-messages" id="deliberationMessages">
+                    <!-- Populated dynamically via JS -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Probability Gauges Grid -->
+              <div class="probabilities-grid">
+                <!-- AI-Generated Probability Gauge -->
+                <div class="prob-card">
+                  <div class="prob-card-header">
+                    <span>AI-Generated Probability</span>
+                    <i class="fa-solid fa-robot text-purple"></i>
+                  </div>
+                  <div class="prob-score-row">
+                    <span class="big-score" id="aiGeneratedProb">96.8%</span>
+                    <span class="score-level-badge badge-high" id="aiProbBadge">High Likelihood</span>
+                  </div>
+                  <div class="mini-bar-track">
+                    <div class="mini-bar-fill bg-gradient-purple" id="aiProbBar" style="width: 96.8%;"></div>
+                  </div>
+                </div>
+
+                <!-- Manipulation Probability Gauge -->
+                <div class="prob-card">
+                  <div class="prob-card-header">
+                    <span>Manipulation / Splicing</span>
+                    <i class="fa-solid fa-scissors text-amber"></i>
+                  </div>
+                  <div class="prob-score-row">
+                    <span class="big-score" id="manipulationProb">84.2%</span>
+                    <span class="score-level-badge badge-medium" id="manipProbBadge">Elevated</span>
+                  </div>
+                  <div class="mini-bar-track">
+                    <div class="mini-bar-fill bg-gradient-amber" id="manipProbBar" style="width: 84.2%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detailed Forensic Indicators Checklist -->
+              <div class="forensic-indicators-section">
+                <h4 class="subhead-title"><i class="fa-solid fa-list-check"></i> Forensic Biometric &amp; Visual Indicators</h4>
+                <div class="indicators-grid" id="indicatorsGrid">
+                  
+                  <div class="indicator-item" id="indReflection">
+                    <div class="ind-icon danger"><i class="fa-solid fa-eye"></i></div>
+                    <div class="ind-info">
+                      <div class="ind-name">Corneal Reflection Consistency</div>
+                      <div class="ind-status" id="statusReflection">Asymmetric light source angles detected in pupils</div>
+                    </div>
+                    <span class="ind-tag tag-danger" id="tagReflection">Anomaly</span>
+                  </div>
+
+                  <div class="indicator-item" id="indBoundary">
+                    <div class="ind-icon warning"><i class="fa-solid fa-border-none"></i></div>
+                    <div class="ind-info">
+                      <div class="ind-name">Facial Edge Blending &amp; Boundaries</div>
+                      <div class="ind-status" id="statusBoundary">Frequency discontinuities around jawline &amp; collar</div>
+                    </div>
+                    <span class="ind-tag tag-warn" id="tagBoundary">Warning</span>
+                  </div>
+
+                  <div class="indicator-item" id="indFrequency">
+                    <div class="ind-icon danger"><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="ind-info">
+                      <div class="ind-name">FFT Spectrum &amp; Latent Noise</div>
+                      <div class="ind-status" id="statusFrequency">Periodic checkerboard artifacts typical of GAN upsampling</div>
+                    </div>
+                    <span class="ind-tag tag-danger" id="tagFrequency">Synthetic</span>
+                  </div>
+
+                  <div class="indicator-item" id="indTexture">
+                    <div class="ind-icon success"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="ind-info">
+                      <div class="ind-name">Micro-Texture &amp; Skin Pores</div>
+                      <div class="ind-status" id="statusTexture">Unnatural smoothing and loss of high-frequency pores</div>
+                    </div>
+                    <span class="ind-tag tag-danger" id="tagTexture">Over-smoothed</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Forensic Explanation Text -->
+              <div class="forensic-explanation-box">
+                <h4 class="subhead-title"><i class="fa-solid fa-file-lines"></i> Detailed Analysis Summary</h4>
+                <p id="forensicExplanationText">
+                  The analyzed media exhibits strong biometric discrepancies characteristic of generative diffusion algorithms. High-pass frequency decomposition reveals irregular noise distribution around facial contours. Pupil highlights reflect inconsistent environmental light vectors, indicating synthetic face reconstruction.
+                </p>
+              </div>
+
+              <!-- Export / Save Action Row -->
+              <div class="results-actions-row">
+                <button class="btn btn-glass-secondary" id="exportAuditReportBtn">
+                  <i class="fa-solid fa-download"></i>
+                  <span>Export Forensic Audit (JSON)</span>
+                </button>
+                <button class="btn btn-glass-secondary" id="printReportBtn">
+                  <i class="fa-solid fa-print"></i>
+                  <span>Print Audit Summary</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: TEXT & MISINFORMATION ANALYSIS ==================== -->
+    <section class="feature-section" id="text-analysis">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-spell-check"></i> NLP SYNTHETIC DETECTION</div>
+        <h2 class="section-title">Text &amp; Misinformation <span class="gradient-text">Analysis</span></h2>
+        <p class="section-subtitle">
+          Detect machine-generated articles, suspicious phishing emails, AI hallucinations, and linguistic deception patterns with heuristic NLP inspection.
+        </p>
+      </div>
+
+      <div class="text-analysis-container">
+        <!-- Preset Text Quick Samples -->
+        <div class="demo-samples-card">
+          <div class="samples-header">
+            <span class="samples-title"><i class="fa-solid fa-flask"></i> Quick Text Test Presets:</span>
+            <span class="samples-hint">Load sample text to test algorithmic detection instantly:</span>
+          </div>
+          <div class="samples-btn-group">
+            <button class="sample-preset-btn" data-text-sample="phishing">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span>Urgent Bank Phishing Scam</span>
+              <span class="preset-tag tag-fake">Deceptive</span>
+            </button>
+            <button class="sample-preset-btn" data-text-sample="ai-hallucination">
+              <i class="fa-solid fa-brain"></i>
+              <span>Synthetic AI News Article</span>
+              <span class="preset-tag tag-warn">Generated</span>
+            </button>
+            <button class="sample-preset-btn" data-text-sample="authentic-human">
+              <i class="fa-solid fa-pen-nib"></i>
+              <span>Authentic Human Message</span>
+              <span class="preset-tag tag-real">Human</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-workspace-grid">
+          <!-- Text Input Card -->
+          <div class="glass-card text-input-card">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-keyboard icon-accent"></i>
+                <div>
+                  <h3>Input Suspicious Text</h3>
+                  <p class="card-caption">Paste articles, emails, direct messages, or synthetic claims</p>
+                </div>
+              </div>
+              <button class="btn-icon-subtle" id="clearTextBtn" title="Clear input text">
+                <i class="fa-solid fa-xmark"></i> Clear
+              </button>
+            </div>
+
+            <div class="textarea-wrapper">
+              <textarea id="textAnalysisInput" placeholder="Paste suspicious text, phishing email, or potential AI-generated message here (minimum 25 characters)..." rows="9"></textarea>
+            </div>
+
+            <div class="textarea-footer">
+              <div class="text-counters">
+                <span>Characters: <strong id="charCount">0</strong></span>
+                <span>• Words: <strong id="wordCount">0</strong></span>
+              </div>
+              <button class="btn btn-primary-glow" id="analyzeTextBtn">
+                <i class="fa-solid fa-brain"></i>
+                <span>Analyze Text Patterns</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Text Analysis Results Card -->
+          <div class="glass-card text-results-card" id="textResultsCard">
+            <!-- Blank State -->
+            <div class="results-blank-state" id="textBlankState">
+              <div class="blank-icon-wrap">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <h3>Awaiting Text Input</h3>
+              <p>Paste text on the left or click a demo preset to examine synthetic token perplexity, urgent deception vectors, and repetitive AI phrasing.</p>
+            </div>
+
+            <!-- Active Text Results Content -->
+            <div class="results-content hidden" id="textContent">
+              <div class="verdict-banner" id="textVerdictBanner">
+                <div class="verdict-icon" id="textVerdictIcon">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="verdict-text-block">
+                  <span class="verdict-tag" id="textVerdictTag">LINGUISTIC ASSESSMENT</span>
+                  <h3 class="verdict-title" id="textVerdictTitle">LIKELY AI-GENERATED TEXT</h3>
+                  <p class="verdict-subtitle" id="textVerdictSubtitle">Contains high repetition of synthetic transition tokens and low vocabulary burstiness.</p>
+                </div>
+                <div class="verdict-confidence-badge" id="textVerdictBadge">
+                  <span class="conf-label">Perplexity Score</span>
+                  <span class="conf-value" id="textPerplexityScore">Low (28)</span>
+                </div>
+              </div>
+
+              <!-- Text Probability Mini-Grid -->
+              <div class="probabilities-grid">
+                <div class="prob-card">
+                  <div class="prob-card-header">
+                    <span>AI Generation Probability</span>
+                    <i class="fa-solid fa-microchip text-purple"></i>
+                  </div>
+                  <div class="prob-score-row">
+                    <span class="big-score" id="textAiProb">92.4%</span>
+                    <span class="score-level-badge badge-high" id="textAiProbBadge">Synthetic</span>
+                  </div>
+                  <div class="mini-bar-track">
+                    <div class="mini-bar-fill bg-gradient-purple" id="textAiBar" style="width: 92.4%;"></div>
+                  </div>
+                </div>
+
+                <div class="prob-card">
+                  <div class="prob-card-header">
+                    <span>Deception &amp; Urgency Index</span>
+                    <i class="fa-solid fa-triangle-exclamation text-amber"></i>
+                  </div>
+                  <div class="prob-score-row">
+                    <span class="big-score" id="textDeceptionProb">78.0%</span>
+                    <span class="score-level-badge badge-medium" id="textDeceptionBadge">Phishing Clues</span>
+                  </div>
+                  <div class="mini-bar-track">
+                    <div class="mini-bar-fill bg-gradient-amber" id="textDeceptionBar" style="width: 78.0%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Highlighted Suspicious Words View -->
+              <div class="highlighted-text-section">
+                <div class="highlight-header">
+                  <span class="subhead-title"><i class="fa-solid fa-highlighter"></i> Highlighted Linguistic Flags:</span>
+                  <div class="highlight-legend">
+                    <span class="legend-chip chip-ai"><span class="chip-color"></span> AI Cliché</span>
+                    <span class="legend-chip chip-urgency"><span class="chip-color"></span> Urgency / Scam</span>
+                    <span class="legend-chip chip-passive"><span class="chip-color"></span> Passive / Hedging</span>
+                  </div>
+                </div>
+                <div class="highlighted-text-container" id="highlightedTextDisplay">
+                  <!-- Injected via JavaScript -->
+                </div>
+              </div>
+
+              <!-- Text Explanation -->
+              <div class="forensic-explanation-box">
+                <h4 class="subhead-title"><i class="fa-solid fa-magnifying-glass"></i> Linguistic Forensic Analysis</h4>
+                <p id="textForensicExplanation">
+                  The text displays uniform sentence lengths and standard synthetic formulaic structures. Repetitive reliance on clichéd synthetic connective phrases indicates automated generation by large language models.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: DIGITAL IDENTITY VERIFICATION ==================== -->
+    <section class="feature-section" id="identity-verification">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-id-card"></i> BIOMETRIC MATCHING</div>
+        <h2 class="section-title">Digital Identity <span class="gradient-text">Verification</span></h2>
+        <p class="section-subtitle">
+          Cross-compare government credentials against selfie portraits using simulated multi-point facial geometry and anti-spoofing verification.
+        </p>
+      </div>
+
+      <div class="id-verification-container">
+        <!-- Preset Pairs Selector -->
+        <div class="demo-samples-card">
+          <div class="samples-header">
+            <span class="samples-title"><i class="fa-solid fa-flask"></i> Quick Identity Test Pairs:</span>
+            <span class="samples-hint">Load sample credential pairs to simulate biometric match scenarios:</span>
+          </div>
+          <div class="samples-btn-group">
+            <button class="sample-preset-btn" data-id-pair="match">
+              <i class="fa-solid fa-user-check"></i>
+              <span>Valid Match (Same Individual)</span>
+              <span class="preset-tag tag-real">Verified</span>
+            </button>
+            <button class="sample-preset-btn" data-id-pair="mismatch">
+              <i class="fa-solid fa-user-xmark"></i>
+              <span>Identity Impersonator (Mismatch)</span>
+              <span class="preset-tag tag-fake">Not Verified</span>
+            </button>
+            <button class="sample-preset-btn" data-id-pair="synthetic-id">
+              <i class="fa-solid fa-id-badge"></i>
+              <span>Tampered / Synthetic Document</span>
+              <span class="preset-tag tag-warn">Needs Review</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="id-verification-grid">
+          
+          <!-- Document Card A (ID Card) -->
+          <div class="glass-card id-upload-card" id="cardDocA">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-address-card icon-accent"></i>
+                <div>
+                  <h3>Document Credential</h3>
+                  <p class="card-caption">National ID, Passport, or License</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="id-dropzone-box" id="dropzoneDoc">
+              <input type="file" id="inputDocFile" accept="image/*" class="file-input-hidden">
+              <div class="id-empty-state" id="emptyDoc">
+                <i class="fa-regular fa-id-card"></i>
+                <span>Upload Document Photo</span>
+                <small>Drag &amp; drop or click to browse</small>
+              </div>
+              <div class="id-preview-state hidden" id="previewDoc">
+                <img id="imgDocPreview" src="" alt="Government ID preview">
+                <div class="id-overlay-badge"><i class="fa-solid fa-passport"></i> ID Card</div>
+                <button class="id-btn-clear" id="clearDocBtn" title="Remove"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matching Engine Link Indicator (Middle) -->
+          <div class="id-matcher-hub">
+            <div class="matcher-circle">
+              <i class="fa-solid fa-arrows-split-up-and-left fa-rotate-90"></i>
+            </div>
+            <div class="matcher-line"></div>
+          </div>
+
+          <!-- Document Card B (Selfie Live Portrait) -->
+          <div class="glass-card id-upload-card" id="cardDocB">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-camera icon-accent"></i>
+                <div>
+                  <h3>Live Portrait / Selfie</h3>
+                  <p class="card-caption">Recent facial capture for liveness check</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="id-dropzone-box" id="dropzoneSelfie">
+              <input type="file" id="inputSelfieFile" accept="image/*" class="file-input-hidden">
+              <div class="id-empty-state" id="emptySelfie">
+                <i class="fa-regular fa-user"></i>
+                <span>Upload Live Selfie</span>
+                <small>Drag &amp; drop or click to browse</small>
+              </div>
+              <div class="id-preview-state hidden" id="previewSelfie">
+                <img id="imgSelfiePreview" src="" alt="Live Selfie preview">
+                <div class="id-overlay-badge"><i class="fa-solid fa-face-smile"></i> Selfie</div>
+                <button class="id-btn-clear" id="clearSelfieBtn" title="Remove"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Verify Identity Action Bar -->
+        <div class="verify-action-bar">
+          <button class="btn btn-primary-glow btn-lg" id="runVerificationBtn" disabled>
+            <i class="fa-solid fa-fingerprint"></i>
+            <span id="verifyBtnText">Execute Biometric Matching</span>
+          </button>
+        </div>
+
+        <!-- Biometric Scan Laser Overlay (Simulated animation) -->
+        <div class="id-scan-modal-overlay hidden" id="idScanAnimationBox">
+          <div class="id-scan-modal-box">
+            <div class="scanner-rings">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+            <div class="id-scan-status-text" id="idScanStatusText">Aligning 68 Biometric Facial Landmarks...</div>
+          </div>
+        </div>
+
+        <!-- Verification Results Dashboard Card -->
+        <div class="glass-card id-results-card hidden" id="idResultsCard">
+          <div class="id-result-header">
+            <div class="id-status-badge-large" id="idStatusBadgeLarge">
+              <i class="fa-solid fa-circle-check" id="idStatusIcon"></i>
+              <span id="idStatusTitle">IDENTITY VERIFIED</span>
+            </div>
+            <div class="id-ref-number">
+              <span>REFERENCE AUDIT ID:</span>
+              <strong id="idAuditRefNumber">TS-VER-89420-A</strong>
+            </div>
+          </div>
+
+          <!-- Matching Score Breakdown Grid -->
+          <div class="id-metrics-grid">
+            <!-- Circular Matching Gauge -->
+            <div class="id-gauge-box">
+              <div class="radial-gauge-wrapper">
+                <svg class="radial-svg" viewBox="0 0 120 120">
+                  <circle class="radial-bg" cx="60" cy="60" r="50"/>
+                  <circle class="radial-progress" id="idRadialProgress" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="31.4"/>
+                </svg>
+                <div class="radial-value-wrap">
+                  <span class="radial-percent" id="idMatchScoreText">94.8%</span>
+                  <span class="radial-caption">Match Score</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diagnostics Checklist -->
+            <div class="id-diagnostics-list">
+              <div class="diag-item">
+                <div class="diag-header">
+                  <span><i class="fa-solid fa-draw-polygon"></i> 3D Facial Geometry &amp; Inter-Pupillary Distance</span>
+                  <span class="diag-val text-green" id="diagGeometry">96.2% Match</span>
+                </div>
+                <div class="mini-bar-track"><div class="mini-bar-fill bg-green" id="barGeometry" style="width: 96.2%;"></div></div>
+              </div>
+
+              <div class="diag-item">
+                <div class="diag-header">
+                  <span><i class="fa-solid fa-shield-halved"></i> Document Security &amp; Tamper Integrity</span>
+                  <span class="diag-val text-green" id="diagTamper">Authentic (Passed)</span>
+                </div>
+                <div class="mini-bar-track"><div class="mini-bar-fill bg-green" id="barTamper" style="width: 98%;"></div></div>
+              </div>
+
+              <div class="diag-item">
+                <div class="diag-header">
+                  <span><i class="fa-solid fa-person-rays"></i> Active Liveness &amp; 3D Depth Check</span>
+                  <span class="diag-val text-green" id="diagLiveness">Live Human Confirmed</span>
+                </div>
+                <div class="mini-bar-track"><div class="mini-bar-fill bg-green" id="barLiveness" style="width: 95%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclaimer in Identity Result -->
+          <div class="disclaimer-callout">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div>
+              <strong>Production Requirement Notice:</strong>
+              <span>Actual commercial identity verification requires certified biometric backends, encrypted e-Passport NFC chip verification, and SOC2/KYC compliance. This frontend demonstration simulates the verification workflow for educational review.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: RESULTS DASHBOARD & AUDIT LOG ==================== -->
+    <section class="feature-section" id="dashboard">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-table-columns"></i> FORENSIC OPERATIONS</div>
+        <h2 class="section-title">Forensic Analysis <span class="gradient-text">Dashboard</span></h2>
+        <p class="section-subtitle">
+          Real-time oversight of all analyzed media, flagged synthetic deepfakes, identity match rates, and local audit logs.
+        </p>
+      </div>
+
+      <div class="dashboard-container">
+        <!-- Metric KPI Cards -->
+        <div class="kpi-grid">
+          <div class="glass-card kpi-card">
+            <div class="kpi-icon-wrap cyan">
+              <i class="fa-solid fa-images"></i>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-caption">Total Images Analyzed</span>
+              <h3 class="kpi-number" id="dashTotalImages">0</h3>
+              <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> Real-time local tally</span>
+            </div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-icon-wrap red">
+              <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-caption">Potential Deepfakes Detected</span>
+              <h3 class="kpi-number" id="dashTotalDeepfakes">0</h3>
+              <span class="kpi-trend warning"><i class="fa-solid fa-triangle-exclamation"></i> Flagged for review</span>
+            </div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-icon-wrap purple">
+              <i class="fa-solid fa-id-card-clip"></i>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-caption">Verification Attempts</span>
+              <h3 class="kpi-number" id="dashTotalIdentities">0</h3>
+              <span class="kpi-trend cyan"><i class="fa-solid fa-user-check"></i> Biometric checks</span>
+            </div>
+          </div>
+
+          <div class="glass-card kpi-card">
+            <div class="kpi-icon-wrap green">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-caption">Fraud Prevention Rate</span>
+              <h3 class="kpi-number" id="dashFraudRate">98.2%</h3>
+              <span class="kpi-trend positive"><i class="fa-solid fa-check"></i> Heuristic benchmark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid (Pure HTML5 Canvas - Zero External Library Dependencies) -->
+        <div class="dashboard-charts-grid">
+          <!-- Classification Distribution Donut Chart -->
+          <div class="glass-card chart-card">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-chart-pie icon-accent"></i>
+                <div>
+                  <h3>Media Classification Distribution</h3>
+                  <p class="card-caption">Proportion of scanned items by forensic status</p>
+                </div>
+              </div>
+            </div>
+            <div class="canvas-chart-wrapper">
+              <canvas id="distributionDonutChart" width="280" height="220"></canvas>
+              <div class="chart-legend-box" id="donutLegend">
+                <div class="legend-row"><span class="legend-dot bg-purple"></span> Synthetic AI (<span id="countSynth">0</span>)</div>
+                <div class="legend-row"><span class="legend-dot bg-amber"></span> Manipulated (<span id="countManip">0</span>)</div>
+                <div class="legend-row"><span class="legend-dot bg-green"></span> Authentic (<span id="countAuth">0</span>)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vectors Breakdown Bar Chart -->
+          <div class="glass-card chart-card">
+            <div class="card-inner-header">
+              <div class="card-title-group">
+                <i class="fa-solid fa-chart-column icon-accent"></i>
+                <div>
+                  <h3>Analysis By Detection Vector</h3>
+                  <p class="card-caption">Inspection requests categorized by module</p>
+                </div>
+              </div>
+            </div>
+            <div class="canvas-chart-wrapper">
+              <canvas id="vectorsBarChart" width="340" height="220"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Analysis History Table Card -->
+        <div class="glass-card history-card">
+          <div class="history-card-header">
+            <div class="card-title-group">
+              <i class="fa-solid fa-clock-rotate-left icon-accent"></i>
+              <div>
+                <h3>Recent Analysis History</h3>
+                <p class="card-caption">Persisted locally in browser storage (localStorage)</p>
+              </div>
+            </div>
+
+            <div class="history-actions">
+              <button class="btn btn-sm btn-glass-secondary" id="exportHistoryBtn" title="Download History as JSON">
+                <i class="fa-solid fa-download"></i> Export JSON
+              </button>
+              <button class="btn btn-sm btn-glass-secondary danger" id="clearHistoryBtn" title="Clear all local scan logs">
+                <i class="fa-solid fa-trash-can"></i> Clear History
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="table-responsive">
+            <table class="history-table" id="historyTable">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Module</th>
+                  <th>Source / Label</th>
+                  <th>Verdict Assessment</th>
+                  <th>Confidence</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody">
+                <!-- Dynamically populated via script.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty History Message -->
+          <div class="history-empty-message hidden" id="historyEmpty">
+            <i class="fa-solid fa-folder-open"></i>
+            <p>No recent analysis logs found. Scan images, text, or identity pairs to populate your forensic log.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: ABOUT & METHODOLOGY ==================== -->
+    <section class="feature-section" id="about">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-atom"></i> ARCHITECTURE &amp; RESEARCH</div>
+        <h2 class="section-title">How TrueSight AI <span class="gradient-text">Protects Truth</span></h2>
+        <p class="section-subtitle">
+          Combining spatial artifact localization, frequency domain spectral analysis, and multi-modal integrity cross-checks to counter generative manipulation.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Methodology Card 1 -->
+        <div class="glass-card methodology-card">
+          <div class="method-step-num">01</div>
+          <div class="method-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Spatial &amp; Frequency FFT Analysis</h3>
+          <p>
+            Generative diffusion models and GAN upsamplers leave telltale periodic grid artifacts in the frequency domain. TrueSight analyzes spatial pixel gradients and 2D Fourier transforms to spot non-organic high-frequency noise spikes.
+          </p>
+        </div>
+
+        <!-- Methodology Card 2 -->
+        <div class="glass-card methodology-card">
+          <div class="method-step-num">02</div>
+          <div class="method-icon"><i class="fa-solid fa-eye-low-vision"></i></div>
+          <h3>Biometric &amp; Lighting Invariance</h3>
+          <p>
+            Human eyes reflect light according to physical optics. We audit corneal specular reflections across both pupils to ensure light source angle consistency and check for blending seams along hair, neck, and ear boundaries.
+          </p>
+        </div>
+
+        <!-- Methodology Card 3 -->
+        <div class="glass-card methodology-card">
+          <div class="method-step-num">03</div>
+          <div class="method-icon"><i class="fa-solid fa-language"></i></div>
+          <h3>Linguistic Perplexity &amp; Stylometry</h3>
+          <p>
+            Large language models often exhibit repetitive burstiness and predictable token transitions. Our NLP analyzer models token entropy, deceptive urgency keywords, and formulaic clichés to flag synthetic texts.
+          </p>
+        </div>
+
+        <!-- Methodology Card 4 -->
+        <div class="glass-card methodology-card">
+          <div class="method-step-num">04</div>
+          <div class="method-icon"><i class="fa-solid fa-lock"></i></div>
+          <h3>Zero-Knowledge Local Privacy</h3>
+          <p>
+            Media privacy is paramount. TrueSight AI runs local file processing inside the user's browser runtime. Sensitive identity documents never leave the client's local session, ensuring ethical adherence to privacy standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hackathon Project Presentation Callout -->
+      <div class="hackathon-presentation-banner">
+        <div class="banner-badge"><i class="fa-solid fa-graduation-cap"></i> College Hackathon Showcase</div>
+        <div class="banner-inner">
+          <div class="banner-text">
+            <h3>Designed for 24-Hour Hackathon Demonstration</h3>
+            <p>
+              TrueSight AI was architected exclusively using standard HTML5, CSS3, and Vanilla JavaScript—without bloated external frameworks. It provides evaluators and judges with instant interactive presets, live client-side canvas heatmaps, local storage persistence, and comprehensive synthetic defense demonstrations.
+            </p>
+          </div>
+          <div class="tech-stack-badges">
+            <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5 Semantic</span>
+            <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3 Glassmorphism</span>
+            <span class="tech-tag"><i class="fa-brands fa-js"></i> Vanilla JS (ES6+)</span>
+            <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> 100% Client-Side</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer-wrapper">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="brand-title">TrueSight<span class="brand-accent">.AI</span></span>
+            <span class="brand-badge">PROTOTYPE</span>
+          </div>
+          <p class="footer-tagline">
+            Empowering institutions, journalists, and citizens to discern synthetic realities through transparent digital forensics.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <a href="#hero">Home</a>
+          <a href="#image-detection">Image Detection</a>
+          <a href="#text-analysis">Text Analysis</a>
+          <a href="#identity-verification">Identity Verification</a>
+          <a href="#dashboard">Dashboard</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Detection Vectors</h4>
+          <a href="#image-detection">Diffusion Artifacts</a>
+          <a href="#image-detection">Face Swap Boundaries</a>
+          <a href="#text-analysis">Phishing &amp; AI Text</a>
+          <a href="#identity-verification">Credential Tampering</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Ethical AI</h4>
+          <a href="#about">Privacy Standards</a>
+          <a href="#about">Methodology</a>
+          <a href="#about">Disinformation Defense</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TrueSight AI. Built for Academic &amp; Hackathon Demonstration. All simulated detections are generated locally in browser runtime.</p>
+        <div class="footer-back-to-top">
+          <a href="#top-navbar" class="back-to-top-btn" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL: AUDIT REPORT VIEW & PRINT ==================== -->
+  <div class="modal-overlay hidden" id="auditModal">
+    <div class="modal-box glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-shield text-cyan"></i>
+          <h3>Forensic Analysis Audit Certificate</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-body" id="modalPrintArea">
+        <div class="cert-header">
+          <div class="cert-logo">TRUESIGHT AI FORENSICS CERTIFICATE</div>
+          <div class="cert-stamp" id="certStamp">FLAGGED: SYNTHETIC</div>
+        </div>
+
+        <div class="cert-meta-grid">
+          <div><span>Audit Case ID:</span> <strong id="certAuditId">TS-8942-X</strong></div>
+          <div><span>Inspection Timestamp:</span> <strong id="certTimestamp">2026-11-21 23:15:00 UTC</strong></div>
+          <div><span>Engine Engine:</span> <strong>TrueSight Forensic Heuristics v2.4</strong></div>
+          <div><span>Target Type:</span> <strong id="certTargetType">Image Analysis</strong></div>
+        </div>
+
+        <hr class="cert-divider">
+
+        <div class="cert-verdict-summary">
+          <h4>Primary Assessment Verdict</h4>
+          <div class="cert-big-verdict" id="certBigVerdict">HIGH PROBABILITY OF GENERATIVE AI SYNTHESIS</div>
+          <p id="certExplanation">The subjected digital asset was examined across multiple spatial, frequency, and biometric vectors. High-pass residual checks indicate latent diffusion reconstruction signatures.</p>
+        </div>
+
+        <div class="cert-scores-summary">
+          <div class="cert-score-item">
+            <span>Synthetic Media Probability</span>
+            <strong id="certScoreSynth">96.8%</strong>
+          </div>
+          <div class="cert-score-item">
+            <span>Boundary Splicing Risk</span>
+            <strong id="certScoreManip">84.2%</strong>
+          </div>
+          <div class="cert-score-item">
+            <span>Inspection Confidence</span>
+            <strong id="certScoreConf">98.4%</strong>
+          </div>
+        </div>
+
+        <div class="cert-disclaimer">
+          <strong>Notice:</strong> This certificate is generated by the TrueSight AI hackathon demonstration platform. It outlines simulated heuristic detection benchmarks for educational and evaluation purposes.
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-glass-secondary" id="modalDownloadJsonBtn">
+          <i class="fa-solid fa-file-code"></i> Download JSON
+        </button>
+        <button class="btn btn-primary-glow" id="modalPrintActionBtn">
+          <i class="fa-solid fa-print"></i> Print Certificate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Center -->
+  <div class="toast-center" id="toastCenter"></div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
